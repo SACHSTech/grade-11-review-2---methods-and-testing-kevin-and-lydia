@@ -2,40 +2,37 @@ package gr11review.part2;
 
 public class Utility {
 
-    public static class Methods1 {
-    
-        /**
-         * Author: Lydia He
-         * Description: This program returns true if the given string is xy-balanced
-         * @param str String that is tested for xy-balance. 
-         * @return returns true if the given string is xy-balanced, returns false if not. 
-         */
-        public static boolean xyBalance(String str) {
-            // Variables
-            int intCharX = 0;
-            int intCharY = 0;
+    /**
+     * Author: Lydia He
+     * Description: This program returns true if the given string is xy-balanced
+     * @param str String that is tested for xy-balance. 
+     * @return returns true if the given string is xy-balanced, returns false if not. 
+     */
+    public static boolean xyBalance(String str) {
+        // Variables
+        int intCharX = 0;
+        int intCharY = 0;
 
-            // String Methods
-            for (int i = 0; i < str.length(); i++) {
-                if (str.charAt(i) == 'x') {
-                    intCharX = i;
-                    System.out.println(i);
-                } else {
-                    intCharX = -1;
-                }
-                if (str.charAt(i) == 'y') {
-                    intCharY = i;
-                } else {
-                    intCharY = -1;
-                }
-            }
-    
-            if (intCharY > intCharX) {
-                return true;
+        // String Methods
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == 'x') {
+                intCharX = i;
             } else {
-                return false;
+                intCharX = -1;
+            }
+            if (str.charAt(i) == 'y') {
+                intCharY = i;
+            } else {
+                intCharY = -1;
             }
         }
+
+        if (intCharY > intCharX) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     
     /**
      * Sums the integers in the string
@@ -61,5 +58,5 @@ public class Utility {
         // return sum including the strTemp at last index in case strTemp still has a value
         return strSum + Integer.parseInt(strTemp);
     }
-    }
+
 }

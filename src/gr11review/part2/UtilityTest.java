@@ -3,9 +3,34 @@ package gr11review.part2;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-import gr11review.part2.Utility;
+//import gr11review.part2.Utility;
 
 public class UtilityTest{
+    // Methods1 Test
+    @Test
+    public void xyBalanceTest1() {
+        assertEquals(true, Utility.xyBalance("aaxbby")); // true
+    }
+
+    @Test
+    public void xyBalanceTest2() {
+        assertEquals(false, Utility.xyBalance("aaxbb")); // false
+    }
+
+    @Test
+    public void xyBalanceTest3() {
+        assertEquals(false, Utility.xyBalance("yaaxbb")); // false
+    }
+
+    @Test
+    public void xyBalanceTest4() {
+        assertEquals(true, Utility.xyBalance("xxyxxy")); // true
+    }
+
+    @Test
+    public void xyBalanceTest5() {
+        assertEquals(false, Utility.xyBalance("yxxyxx")); // false
+    }
   
     // Methods2 Test
     @Test
