@@ -1,5 +1,7 @@
 package gr11review.part2;
 
+import java.io.*;
+
 public class Utility {
 
     /**
@@ -25,6 +27,22 @@ public class Utility {
 
         // return sum including the strTemp at last index in case strTemp still has a value
         return strSum + Integer.parseInt(strTemp);
+    }
+
+    public static String alphaWord(String filenametxt) throws Exception {
+        BufferedReader file = new BufferedReader(new FileReader("src/gr11review/part2/filenametxt.txt"));
+        String strRead = "";
+        String strTemp = "Z";
+
+        while (strRead != null) {
+            strRead = file.readLine();
+
+            if ((int) strRead.charAt(0) < (int) strTemp.charAt(0)) {
+                strTemp += strRead;
+            }
+        }
+
+        return strTemp;
     }
 
 
