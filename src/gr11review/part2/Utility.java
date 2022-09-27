@@ -3,7 +3,6 @@ package gr11review.part2;
 public class Utility {
 
     public static class Methods1 {
-    
         /**
          * Author: Lydia He
          * Description: This program returns true if the given string is xy-balanced
@@ -62,4 +61,5 @@ public class Utility {
         return strSum + Integer.parseInt(strTemp);
     }
     }
+
 }
