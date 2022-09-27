@@ -9,14 +9,13 @@ public class Methods1 {
     // Variables
     static int intCharX = -1;
     static int intCharY = -1;
-    static boolean blnHasX = false;
-    static boolean blnHasY = false;
 
     public static boolean xyBalance(String str) {
         // String Methods
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == 'x') {
                 intCharX = i;
+                System.out.println(i);
             }
 
             if (str.charAt(i) == 'y') {
