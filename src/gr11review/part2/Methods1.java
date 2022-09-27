@@ -1,44 +1,18 @@
 package gr11review.part2;
+import java.io.*;
 
-/**
- * Author: Lydia He
- * Description: This program reutrns true if the given string is xy-balanced. 
- */
+import org.junit.jupiter.params.shadow.com.univocity.parsers.common.input.InputAnalysisProcess;
+
+import gr11review.part2.Utility;
 
 public class Methods1 {
-    // Variables
-    static int intCharX;
-    static int intCharY;
-
-    public static boolean xyBalance(String str) {
-        // String Methods
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == 'x') {
-                intCharX = i;
-                System.out.println(i);
-            } else {
-                intCharX = -1;
-            }
-
-            if (str.charAt(i) == 'y') {
-                intCharY = i;
-            } else {
-                intCharY = -1;
-            }
-        }
-
-        if (intCharY > intCharX) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     public static void main(String[] args) {
-        System.out.println(xyBalance("aaxbby")); // true
-        System.out.println(xyBalance("aaxbb")); // false
-        System.out.println(xyBalance("yaaxbb")); // false
-        System.out.println(xyBalance("xxyxxy")); // true
-        System.out.println(xyBalance("yxxyxx")); // false
+        System.out.println(Utility.xyBalance("aaxbby")); // true
+        System.out.println(Utility.xyBalance("aaxbb")); // false
+        System.out.println(Utility.xyBalance("yaaxbb")); // false
+        System.out.println(Utility.xyBalance("xxyxxy")); // true
+        System.out.println(Utility.xyBalance("yxxyxx")); // false
     }
+
 }
