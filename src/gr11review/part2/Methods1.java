@@ -7,8 +7,8 @@ package gr11review.part2;
 
 public class Methods1 {
     // Variables
-    static int intCharX = -1;
-    static int intCharY = -1;
+    static int intCharX;
+    static int intCharY;
 
     public static boolean xyBalance(String str) {
         // String Methods
@@ -16,10 +16,14 @@ public class Methods1 {
             if (str.charAt(i) == 'x') {
                 intCharX = i;
                 System.out.println(i);
+            } else {
+                intCharX = -1;
             }
 
             if (str.charAt(i) == 'y') {
                 intCharY = i;
+            } else {
+                intCharY = -1;
             }
         }
 
@@ -30,7 +34,6 @@ public class Methods1 {
         }
     }
 
-
     public static void main(String[] args) {
         System.out.println(xyBalance("aaxbby")); // true
         System.out.println(xyBalance("aaxbb")); // false
@@ -39,6 +42,3 @@ public class Methods1 {
         System.out.println(xyBalance("yxxyxx")); // false
     }
 }
-    
-
-    
