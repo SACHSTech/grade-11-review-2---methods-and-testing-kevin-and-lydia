@@ -6,6 +6,7 @@
     "configurations": [
         {
             "type": "java",
+
             "name": "Launch Array1",
             "request": "launch",
             "mainClass": "gr11review.part2.Array1",
@@ -13,6 +14,12 @@
         },
         {
             "type": "java",
+
+            "name": "Launch Methods1",
+            "request": "launch",
+            "mainClass": "gr11review.part2.Methods1",
+            "projectName": "grade-11-review-2---methods-and-testing-kevin-and-lydia_3503cf40"
+
             "name": "Launch FileIO2",
             "request": "launch",
             "mainClass": "gr11review.part2.FileIO2",
@@ -20,6 +27,7 @@
         },
         {
             "type": "java",
+
             "name": "Launch Methods2",
             "request": "launch",
             "mainClass": "gr11review.part2.Methods2",

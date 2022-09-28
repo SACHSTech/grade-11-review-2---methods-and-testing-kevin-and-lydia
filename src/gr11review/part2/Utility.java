@@ -63,23 +63,6 @@ public class Utility {
         return strSum + Integer.parseInt(strTemp);
     }
 
-    /*
-    public static String alphaWord(String filenametxt) throws Exception {
-        BufferedReader file = new BufferedReader(new FileReader("src/gr11review/part2/filenametxt.txt"));
-        String strRead = "";
-        String strTemp = "Z";
-
-        while (strRead != null) {
-            strRead = file.readLine();
-
-            if ((int) strRead.charAt(0) < (int) strTemp.charAt(0)) {
-                strTemp += strRead;
-            }
-        }
-
-        return strTemp;
-    }
-    */
 
     /**
      * Takes an array and return an altered array with the value altered to the greatest one beside it
@@ -115,6 +98,4 @@ public class Utility {
         }
         
     }
-
-    
 }
