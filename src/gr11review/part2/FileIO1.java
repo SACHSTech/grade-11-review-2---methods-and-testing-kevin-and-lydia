@@ -12,13 +12,14 @@ public class FileIO1 {
      * @throws IOException
      */
 
-    /**
+
     public static String longestWord(String filenametxt) throws IOException {
-        BufferedReader thefile = new BufferedReader(new FileReader(filenametxt));
+		BufferedReader thefile = new BufferedReader(new FileReader("src/gr11review/part2/" + filenametxt));
 
         // Variables
         String str;
         str = "";
+        String strLongestWord = null;
         
         while(str != null){
 			str = thefile.readLine();
@@ -28,24 +29,11 @@ public class FileIO1 {
 		}
 		thefile.close();
 
-        return filenametxt;
+        return strLongestWord;
     }
-    */
+
 
 	public static void main(String[] args) throws IOException{
-        String bro = "words.txt";
-		BufferedReader thefile = new BufferedReader(new FileReader("src/gr11review/part2/" + bro));
-        // Variables
-        String str;
-        str = "";
-        
-        while(str != null){
-			str = thefile.readLine();
-			if(str != null){
-				System.out.println(str.length());
-			}
-		}
-
-		thefile.close();
+        System.out.println(longestWord("words.txt"));
     }
 }
