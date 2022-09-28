@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Array1",
+            "request": "launch",
+            "mainClass": "gr11review.part2.Array1",
+            "projectName": "grade-11-review-2---methods-and-testing-kevin-and-lydia-1_68db1428"
+        },
+        {
+            "type": "java",
             "name": "Launch FileIO2",
             "request": "launch",
             "mainClass": "gr11review.part2.FileIO2",

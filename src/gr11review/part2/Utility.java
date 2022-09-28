@@ -1,8 +1,42 @@
 package gr11review.part2;
 
 import java.io.*;
+import java.util.Arrays;
 
 public class Utility {
+
+    /**
+     * Author: Lydia He
+     * Description: This program returns true if the given string is xy-balanced
+     * @param str String that is tested for xy-balance. 
+     * @return returns true if the given string is xy-balanced, returns false if not. 
+     */
+    public static boolean xyBalance(String str) {
+        // Variables
+        int intCharX = 0;
+        int intCharY = 0;
+
+        // String Methods
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == 'x') {
+                intCharX = i;
+            } else {
+                intCharX = -1;
+            }
+            if (str.charAt(i) == 'y') {
+                intCharY = i;
+            } else {
+                intCharY = -1;
+            }
+        }
+
+        if (intCharY > intCharX) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
     /**
      * Sums the integers in the string
@@ -29,6 +63,7 @@ public class Utility {
         return strSum + Integer.parseInt(strTemp);
     }
 
+    /*
     public static String alphaWord(String filenametxt) throws Exception {
         BufferedReader file = new BufferedReader(new FileReader("src/gr11review/part2/filenametxt.txt"));
         String strRead = "";
@@ -44,7 +79,42 @@ public class Utility {
 
         return strTemp;
     }
+    */
 
+    /**
+     * Takes an array and return an altered array with the value altered to the greatest one beside it
+     * @param nums the array of integers
+     * @param value the "alone-value" that is to be altered within the array
+     * @return numsReturn (the updated int array)
+     */
+    public static int[] notAlone(int[] nums, int value) {
+        if (nums.length >= 1) { // In case the array size is 0
+            int[] numsReturn = new int[nums.length];
+            numsReturn[0] = nums[0];
+
+            for (int i = 1; i < nums.length; i++) {
+                // If index is the value and is not at the end of the array
+                if (nums[i] == value && i != nums.length-1) {
+                    if (nums[i-1] > nums[i+1]) {
+                        numsReturn[i] = nums[i-1];
+                    }
+                    else {
+                        numsReturn[i] = nums[i+1];
+                    }
+                }
+                else {
+                    numsReturn[i] = nums[i];
+                }
+                System.out.println(numsReturn);
+            }
+    
+            return numsReturn;
+        }
+        else {
+            return nums;
+        }
+        
+    }
 
     
 }
