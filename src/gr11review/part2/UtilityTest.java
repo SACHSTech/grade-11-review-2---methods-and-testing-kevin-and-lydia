@@ -9,27 +9,27 @@ public class UtilityTest{
     // Methods1 Test
     @Test
     public void xyBalanceTest1() {
-        assertEquals(true, Utility.xyBalance("aaxbby")); // true
+        assertEquals(true, Utility.xyBalance("aaxbby"));
     }
 
     @Test
     public void xyBalanceTest2() {
-        assertEquals(false, Utility.xyBalance("aaxbb")); // false
+        assertEquals(false, Utility.xyBalance("aaxbb"));
     }
 
     @Test
     public void xyBalanceTest3() {
-        assertEquals(false, Utility.xyBalance("yaaxbb")); // false
+        assertEquals(false, Utility.xyBalance("yaaxbb"));
     }
 
     @Test
     public void xyBalanceTest4() {
-        assertEquals(true, Utility.xyBalance("xxyxxy")); // true
+        assertEquals(true, Utility.xyBalance("xxyxxy"));
     }
 
     @Test
     public void xyBalanceTest5() {
-        assertEquals(false, Utility.xyBalance("yxxyxx")); // false
+        assertEquals(false, Utility.xyBalance("yxxyxx"));
     }
   
     // Methods2 Test
