@@ -1,4 +1,5 @@
 package gr11review.part2;
+import java.io.*;
 
 public class FileIO1 {
 
@@ -11,9 +12,6 @@ public class FileIO1 {
      */
     public static String longestWord(String filenametxt) {
 
-
-    }
-
-    public static void main(String[] args) {
+        return filenametxt;
     }
 }
