@@ -7,29 +7,34 @@ import org.junit.jupiter.api.Test;
 
 public class UtilityTest{
     // Methods1 Test
+    // Testing for true xybalance
     @Test
     public void xyBalanceTest1() {
         assertEquals(true, Utility.xyBalance("aaxbby"));
     }
 
+    // Testing for false xybalance
     @Test
     public void xyBalanceTest2() {
         assertEquals(false, Utility.xyBalance("aaxbb"));
     }
 
+    // Testing for false xybalance
     @Test
     public void xyBalanceTest3() {
         assertEquals(false, Utility.xyBalance("yaaxbb"));
     }
 
+    // Testing for empty string
     @Test
     public void xyBalanceTest4() {
-        assertEquals(true, Utility.xyBalance("xxyxxy"));
+        assertEquals(false, Utility.xyBalance(" "));
     }
 
+    // Testing for number string
     @Test
     public void xyBalanceTest5() {
-        assertEquals(false, Utility.xyBalance("yxxyxx"));
+        assertEquals(false, Utility.xyBalance("12345"));
     }
   
     // Methods2 Test

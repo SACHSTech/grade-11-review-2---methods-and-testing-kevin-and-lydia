@@ -17,29 +17,17 @@ public class FileIO1 {
 		BufferedReader thefile = new BufferedReader(new FileReader("src/gr11review/part2/" + filenametxt));
 
         // Variables
-        String strLongestWord = null;
-        String str;
-        str = "";
-        int intLongestWord = -1;
-        int intLines = 0;
-        
-        // Counts Number of lines
-        try (BufferedReader reader = new BufferedReader(new FileReader("src/gr11review/part2/" + filenametxt))) {
-            while (reader.readLine() != null) {
-                intLines++;
-            }
-        }
+        String strLongestWord = "";
+        String str = "";
+        int intLongestWord = -1;    
 
         // Finds the longest word in the file
         while(str != null){
 			str = thefile.readLine();
 			if(str != null){
-                for (int i = 0; i < intLines; i++) {
-                    if(str.length() >= intLongestWord) {
-                        intLongestWord = str.length();
-                        strLongestWord = thefile.readLine();
-                    }
-                    System.out.println(str.length());
+                if(str.length() > intLongestWord) {
+                    intLongestWord = str.length();
+                    strLongestWord = str;
                 }
 			}
 		}

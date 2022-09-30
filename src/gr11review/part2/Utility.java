@@ -1,5 +1,9 @@
 package gr11review.part2;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class Utility {
 
     /**
@@ -59,4 +63,32 @@ public class Utility {
         return strSum + Integer.parseInt(strTemp);
     }
 
+    /**
+     * Author: Lydia He
+     * Description: This program returns the longest word in the file,
+     * given the name of a file filenametxt that contains a single word on each line.
+     * @param filenametxt a file that contains a single word on each line.
+     * @return returns the longest word in the file.
+     */
+    public static String longestWord(String filenametxt) throws IOException {
+		BufferedReader thefile = new BufferedReader(new FileReader("src/gr11review/part2/" + filenametxt));
+
+        // Variables
+        String strLongestWord = "";
+        String str = "";
+        int intLongestWord = -1;    
+
+        // Finds the longest word in the file
+        while(str != null){
+			str = thefile.readLine();
+			if(str != null){
+                if(str.length() > intLongestWord) {
+                    intLongestWord = str.length();
+                    strLongestWord = str;
+                }
+			}
+		}
+		thefile.close();
+        return strLongestWord;
+    }
 }
