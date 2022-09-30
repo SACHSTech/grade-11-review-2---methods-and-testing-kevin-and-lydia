@@ -7,6 +7,11 @@ import java.io.*;
 import java.util.Arrays;
 
 public class Utility {
+    public static void main(String[] args) throws IOException{
+        // TRYING TO FIX FILEIO1
+        System.out.println(longestWord("words.txt"));
+    }
+
 
     /**
      * Author: Lydia He
@@ -83,16 +88,16 @@ public class Utility {
 
         // Finds the longest word in the file
         while(str != null){
-			str = thefile.readLine();
-			if(str != null){
+            str = thefile.readLine();
+            if(str != null){
                 if(str.length() > intLongestWord) {
                     intLongestWord = str.length();
                     strLongestWord = str;
                 }
-			}
-		}
-		thefile.close();
+            }
+        } thefile.close();
         return strLongestWord;
+    }
 
     /**
      * Takes an array and return an altered array with the value altered to the greatest one beside it
