@@ -3,6 +3,8 @@ package gr11review.part2;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.*;
+import java.util.Arrays;
 
 public class Utility {
 
@@ -37,7 +39,8 @@ public class Utility {
             return false;
         }
     }
-    
+
+
     /**
      * Sums the integers in the string
      * @param str user-inputted string
@@ -90,5 +93,38 @@ public class Utility {
 		}
 		thefile.close();
         return strLongestWord;
+
+    /**
+     * Takes an array and return an altered array with the value altered to the greatest one beside it
+     * @param nums the array of integers
+     * @param value the "alone-value" that is to be altered within the array
+     * @return numsReturn (the updated int array)
+     */
+    public static int[] notAlone(int[] nums, int value) {
+        if (nums.length >= 1) { // In case the array size is 0
+            int[] numsReturn = new int[nums.length];
+            numsReturn[0] = nums[0];
+
+            for (int i = 1; i < nums.length; i++) {
+                // If index is the value and is not at the end of the array
+                if (nums[i] == value && i != nums.length-1) {
+                    if (nums[i-1] > nums[i+1]) {
+                        numsReturn[i] = nums[i-1];
+                    }
+                    else {
+                        numsReturn[i] = nums[i+1];
+                    }
+                }
+                else {
+                    numsReturn[i] = nums[i];
+                }
+                System.out.println(numsReturn);
+            }
+    
+            return numsReturn;
+        }
+        else {
+            return nums;
+        }
     }
 }
