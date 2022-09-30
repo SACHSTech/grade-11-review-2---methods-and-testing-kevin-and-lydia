@@ -12,10 +12,8 @@ public class Utility {
         System.out.println(longestWord("words.txt"));
     }
 
-
     /**
-     * Author: Lydia He
-     * Description: This program returns true if the given string is xy-balanced
+     * This method returns true if the given string is xy-balanced. 
      * @param str String that is tested for xy-balance. 
      * @return returns true if the given string is xy-balanced, returns false if not. 
      */
@@ -28,21 +26,21 @@ public class Utility {
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == 'x') {
                 intCharX = i;
-            } else {
-                intCharX = -1;
-            }
-            if (str.charAt(i) == 'y') {
+            } else if (str.charAt(i) == 'y') {
                 intCharY = i;
             } else {
                 intCharY = -1;
             }
         }
-
-        if (intCharY > intCharX) {
-            return true;
+        
+        if ((intCharX >= 1) && (intCharX >= 1)) { // If string has both x and y
+            if (intCharY > intCharX) {
+                return true; 
+            }
         } else {
             return false;
         }
+        return false;
     }
 
 
@@ -72,8 +70,7 @@ public class Utility {
     }
 
     /**
-     * Author: Lydia He
-     * Description: This program returns the longest word in the file,
+     * This method returns the longest word in the file,
      * given the name of a file filenametxt that contains a single word on each line.
      * @param filenametxt a file that contains a single word on each line.
      * @return returns the longest word in the file.
@@ -98,6 +95,17 @@ public class Utility {
         } thefile.close();
         return strLongestWord;
     }
+
+    /**
+     * This method returns the version of the given array where all the 10's have been removed. 
+     * @param nums array values. 
+     * @return 
+     */
+    public static int[] withoutTen(int[] nums) {
+
+        return nums;
+    }
+
 
     /**
      * Takes an array and return an altered array with the value altered to the greatest one beside it
