@@ -2,9 +2,9 @@ package gr11review.part2;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-import java.util.Arrays;
 
-//import gr11review.part2.Utility;
+import java.io.IOException;
+import java.util.Arrays;
 
 public class UtilityTest{
     // Methods1 Test
@@ -64,6 +64,11 @@ public class UtilityTest{
         assertEquals(214119, Utility.sumNumbers("fasdl213784ds234oqw93k8"));
     }
 
+    // FileIO1 Test
+    @Test
+    public void fileIO1Test1() throws IOException {
+        assertEquals("consectetur", Utility.longestWord("words.txt"));
+    }
 
     // Array2 Test
     @Test
