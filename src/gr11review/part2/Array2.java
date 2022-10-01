@@ -20,7 +20,8 @@ public class Array2 {
             nums[i] = Integer.parseInt(key.readLine());
         }
        
-        String output = Arrays.toString(Utility.notAlone(nums, value));
-        System.out.println(output);
+        // String output = Arrays.toString(Utility.notAlone(nums, value));
+        // System.out.println(output);
+        System.out.println(Utility.notAlone(nums, value));
     }
 }

@@ -98,4 +98,31 @@ public class Utility {
         }
         
     }
+
+
+    public static boolean canBalance(int[] nums) {
+        double dblSum = 0;
+        int split = 0;
+        boolean isTrue = false;
+
+        for (int i = 0; i < nums.length; i++) {
+            dblSum += nums[i];
+        }
+
+        for (int j = 0; j < nums.length; j++) {
+            if (split == dblSum - split) {
+                isTrue = true;
+                break;
+            } 
+
+            split += nums[j];
+        }
+
+        if (nums.length < 2) {
+            return true;
+        }
+        else {
+            return isTrue;
+        }
+    }
 }
