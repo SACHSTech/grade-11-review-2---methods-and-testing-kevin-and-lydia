@@ -118,6 +118,3 @@ public class Array5Test {
     }
 
 }
-
-
-

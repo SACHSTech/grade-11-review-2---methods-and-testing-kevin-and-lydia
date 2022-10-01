@@ -116,4 +116,40 @@ public class UtilityTest{
 
         assertTrue(Arrays.equals(Utility.notAlone(inArray, 2), outArray));
     }
+
+
+    @Test
+    public void canBalanceTest1() {
+        int[] nums = {1, 1, 1, 2, 1};
+
+        assertEquals(Utility.canBalance(nums), true);
+    }
+
+    @Test
+    public void canBalanceTest2() {
+        int[] nums = {2, 1, 1, 2, 1};
+
+        assertEquals(Utility.canBalance(nums), false);
+    }
+
+    @Test
+    public void canBalanceTest3() {
+        int[] nums = {10, 10};
+
+        assertEquals(Utility.canBalance(nums), true);
+    }
+
+    @Test
+    public void canBalanceTest4() {
+        int[] nums = {0};
+
+        assertEquals(Utility.canBalance(nums), true);
+    }
+
+    @Test
+    public void canBalanceTest5() {
+        int[] nums = {32532, 4129058, 421849, 21904, 6, 4821, 328, 4, 42, 5, 632529723};
+
+        assertEquals(Utility.canBalance(nums), false);
+    }
 }
