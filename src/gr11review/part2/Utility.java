@@ -39,9 +39,10 @@ public class Utility {
 
 
     /**
-     * Sums the integers in the string
-     * @param str user-inputted string
-     * @return strSum (the sum of the integers in the string)
+     * Methods2: Sums the integers in the string
+     * @param str String used to compute number of integers.
+     * @return strSum the sum of the integers in the string.
+     * @author K. Huang
      */ 
     public static int sumNumbers(String str) {
         int strSum = 0;
@@ -65,10 +66,38 @@ public class Utility {
 
 
     /**
-     * Takes an array and return an altered array with the value altered to the greatest one beside it
-     * @param nums the array of integers
-     * @param value the "alone-value" that is to be altered within the array
-     * @return numsReturn (the updated int array)
+     * FileIO2: This method returns the 1st word alphabetically in the given file
+     * @param filenametxt a file that contains a single word on each line.
+     * @return returns the alphabetically first word in the file.
+     * @throws IOException
+     * @author K. Huang
+     */
+    public static String alphaWord(String filenametxt) throws IOException {
+        BufferedReader file = new BufferedReader(new FileReader("src/gr11review/part2/" + filenametxt));
+        String str = "";
+        String strAlpha = "";
+
+        while (str != null) {
+            str = file.readLine();
+
+            if (str != null) {
+                if (str.compareTo(strAlpha) < 0) {
+                    strAlpha = str;
+                }
+            }
+        }
+
+        file.close();
+        return strAlpha;
+    }
+
+    
+    /**
+     * Array2: Takes an integer array and return an altered array with the value altered to the greatest one beside it.
+     * @param nums the array of integers used.
+     * @param value the "alone-value" that is to be altered within the array.
+     * @return numsReturn the updated array with the "alone" values changed.
+     * @author K. Huang
      */
     public static int[] notAlone(int[] nums, int value) {
         if (nums.length >= 1) { // In case the array size is 0
@@ -100,17 +129,26 @@ public class Utility {
     }
 
 
+    /**
+     * Author: Kevin Huang
+     * Takes an integer array and returns true/false based on if it can be split evenly.
+     * @param nums the integer array that is tested if it can be split.
+     * @return returns true if the given array can be split evenly.
+     * @author K. Huang
+     */
     public static boolean canBalance(int[] nums) {
         double dblSum = 0;
         int split = 0;
         boolean isTrue = false;
 
+        // Iterate through to sum total of the array 
         for (int i = 0; i < nums.length; i++) {
             dblSum += nums[i];
         }
 
+        // Iterate to add up the first half of the array and compare if the array is balanced
         for (int j = 0; j < nums.length; j++) {
-            if (split == dblSum - split) {
+            if (split == dblSum - split) { 
                 isTrue = true;
                 break;
             } 
