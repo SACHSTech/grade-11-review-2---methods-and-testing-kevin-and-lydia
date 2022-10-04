@@ -7,17 +7,12 @@ import java.io.*;
 import java.util.Arrays;
 
 public class Utility {
-    // Delete this after
-    public static void main(String[] args) throws IOException{
-        // TRYING TO FIX FILEIO1
-        System.out.println(longestWord("words.txt"));
-
-    }
 
     /**
-     * This method returns true if the given string is xy-balanced. 
+     * Methods1: This method returns true if the given string is xy-balanced. 
      * @param str String that is tested for xy-balance. 
      * @return returns true if the given string is xy-balanced, returns false if not. 
+     * @author L. He
      */
     public static boolean xyBalance(String str) {
         // Variables
@@ -50,6 +45,7 @@ public class Utility {
      * Sums the integers in the string
      * @param str user-inputted string
      * @return strSum (the sum of the integers in the string)
+     * @author K. Huang
      */ 
     public static int sumNumbers(String str) {
         int strSum = 0;
@@ -72,10 +68,11 @@ public class Utility {
     }
 
     /**
-     * This method returns the longest word in the file,
+     * FileIO1: This method returns the longest word in the file,
      * given the name of a file filenametxt that contains a single word on each line.
      * @param filenametxt a file that contains a single word on each line.
      * @return returns the longest word in the file.
+     * @author L. He
      */
     public static String longestWord(String filenametxt) throws IOException {
 		BufferedReader thefile = new BufferedReader(new FileReader("src/gr11review/part2/" + filenametxt));
@@ -99,9 +96,10 @@ public class Utility {
     }
 
     /**
-     * This method returns the version of the given array where all the 10's have been removed. 
+     * Array1: This method returns the version of the given array where all the 10's have been removed. 
      * @param nums array values. 
-     * @return 
+     * @return returns the array without tens 
+     * @author L. He
      */
     public static int[] withoutTen(int[] nums) {
         // Variables
@@ -130,6 +128,7 @@ public class Utility {
      * @param nums the array of integers
      * @param value the "alone-value" that is to be altered within the array
      * @return numsReturn (the updated int array)
+     * @author K. Huang
      */
     public static int[] notAlone(int[] nums, int value) {
         if (nums.length >= 1) { // In case the array size is 0
@@ -159,6 +158,48 @@ public class Utility {
         }
     }
 
+    /**
+     * Array6: This program creates an array, given n>=0, with the pattern {1, 1, 2, 1, 2, 3, ... 1, 2, 3 .. n} 
+     * The length of the array will be 1 + 2 + 3 ... + n, which is known to sum to exactly n*(n + 1)/2.
+     * @param n The end value in the array
+     * @return The resulting array following the pattern {1, 1, 2, 1, 2, 3, ... 1, 2, 3 .. n} 
+     * @author L. He
+     */
+    public static int[] seriesUp(int n) {
+        // Variable
+        int intCount = 0;
+
+        // Resulting Array
+        int[] finalArray = new int[n * (n + 1) / 2];
+
+        // Two loops
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                finalArray[intCount] = j;
+            }
+        }
+        return finalArray;
+    }
+
+    /**
+     * Array9: This method takes a 2D array and reverses all of the content in the 2D array
+     * @param arr Array input that gets reversed
+     * @return Returns the outputted reversed 2D array
+     * @author L. He
+     */
+    public static int[][] reverse(int[][] arr) {
+        // Resulting Array
+        int[][] finalArray = new int[arr.length][arr[0].length];
+        
+        // Calculation
+        for (int i = 0; i < arr.length; i++){
+            for(int j = 0; j < arr[0].length; j++) {
+                // Final array is the reverse of int[][] arr
+                finalArray[arr.length - i - 1][arr[0].length - j - 1] = arr[i][j];
+            }
+        }
+
+        return finalArray;
 
     public static boolean canBalance(int[] nums) {
         double dblSum = 0;
