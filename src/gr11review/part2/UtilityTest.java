@@ -35,37 +35,42 @@ public class UtilityTest{
         assertEquals(false, Utility.xyBalance("yxxyxx"));
     }
   
-    // Methods2 Test
+    
+    // Methods2 Test1: Testing README Example 1
     @Test
     public void sumNumbersTest1() {
         assertEquals(123, Utility.sumNumbers("abc123xyz"));
     }
 
+    // Methods2 Test2: Testing README Example 2
     @Test
     public void sumNumbersTest2() {
         assertEquals(44, Utility.sumNumbers("aa11b33"));
     }
 
+    // Methods2 Test3: Testing README Example 3
     @Test
     public void sumNumbersTest3() {
         assertEquals(18, Utility.sumNumbers("7 11"));
     }
 
+    // Methods2 Test4: Testing empty string
     @Test
     public void sumNumbersTest4() {
         assertEquals(0, Utility.sumNumbers(""));
     }
 
+    // Methods2 Test5: Testing long string
     @Test
     public void sumNumbersTest5() {
         assertEquals(214119, Utility.sumNumbers("fasdl213784ds234oqw93k8"));
     }
 
 
-    //FileO2 Test
+    //FileO2 Test1: Testing words.txt
     @Test
     public void alphaWordTest1() throws IOException {
-        assertEquals("amet", Utility.alphaWord("src/gr11review/part2/" + "filenametxt"));
+        assertEquals("amet", Utility.alphaWord("words.txt")); // CANT FIND FILE?
     }
 
     // Array2 Test1: Testing simple array, alone value in centre
@@ -153,4 +158,24 @@ public class UtilityTest{
 
         assertEquals(Utility.canBalance(nums), false);
     }
+
+
+    // Array9 Test1: Tests README Example (had to alter it to return strings due to it referencing arrays but not the values)
+    @Test
+    public void invertTest1() {
+        int[][] invertTest = new int[][]{{1, 1, 1}, {2, 2, 2}, {3, 3, 3}};
+        String invertAnswer = "[[1, 2, 3], [1, 2, 3], [1, 2, 3]]";
+
+        assertEquals(invertAnswer, Utility.invert(invertTest));
+    }
+
+    // Array9 Test2: Tests a empty 2D array
+    @Test
+    public void invertTest2() {
+        int[][] invertTest = new int[][]{{0}};
+        String invertAnswer = "[[0]]";
+
+        assertEquals(invertAnswer, Utility.invert(invertTest));
+    }
+
 }

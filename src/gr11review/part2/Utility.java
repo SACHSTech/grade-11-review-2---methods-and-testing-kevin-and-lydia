@@ -77,6 +77,7 @@ public class Utility {
         String str = "";
         String strAlpha = "";
 
+        // Finds the alphabetically first word
         while (str != null) {
             str = file.readLine();
 
@@ -130,8 +131,7 @@ public class Utility {
 
 
     /**
-     * Author: Kevin Huang
-     * Takes an integer array and returns true/false based on if it can be split evenly.
+     * Array5: Takes an integer array and returns true/false based on if it can be split evenly.
      * @param nums the integer array that is tested if it can be split.
      * @return returns true if the given array can be split evenly.
      * @author K. Huang
@@ -163,4 +163,27 @@ public class Utility {
             return isTrue;
         }
     }
+
+
+    /**
+     * Array9: Inverts the given 2D Array.
+     * @param arr the 2D array given.
+     * @return the inverted array.
+     * @author K. Huang
+     */
+    public static String invert(int[][] arr) {
+        int[][] invert = new int[arr.length][arr.length];
+
+        // inverts the 2D array
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+
+                invert[i][j] = arr[j][i];
+            }
+        }
+        
+        return Arrays.deepToString(invert); // Had to change the signature in order to stop aliasing the array objects
+    }
+
+     
 }
