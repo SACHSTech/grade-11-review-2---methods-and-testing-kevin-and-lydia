@@ -81,7 +81,38 @@ public class UtilityTest{
     public void withoutTenTest1() { 
         int[] numsInput = {1, 10, 10, 2};
         int[] numsExpected = {1, 2, 0, 0};
+        // Tests to see if the output removed the two 10s
+        assertEquals(numsExpected, Utility.withoutTen(numsInput));
+    }
 
+    @Test
+    public void withoutTenTest2() { 
+        int[] numsInput = {10, 2, 10};
+        int[] numsExpected = {2, 0, 0};
+        // Tests for removing 10s in the first int
+        assertEquals(numsExpected, Utility.withoutTen(numsInput));
+    }
+
+    @Test
+    public void withoutTenTest3() { 
+        int[] numsInput = {1, 99, 10};
+        int[] numsExpected = {1, 99, 0};
+        assertEquals(numsExpected, Utility.withoutTen(numsInput));
+    }
+
+    @Test
+    public void withoutTenTest4() { 
+        int[] numsInput = {1, 2, 3};
+        int[] numsExpected = {1, 2, 3};
+        // Tests for something that doesn't need to be changed
+        assertEquals(numsExpected, Utility.withoutTen(numsInput));
+    }
+
+    @Test
+    public void withoutTenTest5() { 
+        int[] numsInput = {0, 0, 0, 0, 0, 10};
+        int[] numsExpected = {10, 0, 0, 0, 0, 0};
+        // Tests for large jump
         assertEquals(numsExpected, Utility.withoutTen(numsInput));
     }
 
