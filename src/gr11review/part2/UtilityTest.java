@@ -2,39 +2,47 @@ package gr11review.part2;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-
 import java.io.IOException;
 import java.util.Arrays;
 
-//import gr11review.part2.Utility;
-
 public class UtilityTest{
-    // Methods1 Test
+    // Methods1 Test1: Testing for true xybalance
     @Test
     public void xyBalanceTest1() {
         assertEquals(true, Utility.xyBalance("aaxbby"));
     }
 
+    // Methods1 Test2: Testing for only x
     @Test
     public void xyBalanceTest2() {
         assertEquals(false, Utility.xyBalance("aaxbb"));
     }
 
+    // Methods1 Test3: Testing for y before x
     @Test
     public void xyBalanceTest3() {
         assertEquals(false, Utility.xyBalance("yaaxbb"));
     }
 
+    // Methods1 Test4: Testing for empty string
     @Test
     public void xyBalanceTest4() {
-        assertEquals(true, Utility.xyBalance("xxyxxy"));
+        assertEquals(false, Utility.xyBalance(" "));
     }
 
+    // Methods1 Test5: Testing for number string (no x's and no y's)
     @Test
     public void xyBalanceTest5() {
-        assertEquals(false, Utility.xyBalance("yxxyxx"));
+        assertEquals(false, Utility.xyBalance("12345"));
+    }
+    
+    // Methods1 Test6: Testing for only y
+    @Test
+    public void xyBalanceTest6() {
+        assertEquals(false, Utility.xyBalance("abbby"));
     }
   
+
     
     // Methods2 Test1: Testing README Example 1
     @Test
@@ -67,11 +75,64 @@ public class UtilityTest{
     }
 
 
+
+    // FileIO1 Test1: Testing words.txt
+    @Test
+    public void fileIO1Test1() throws IOException {
+        assertEquals("consectetur", Utility.longestWord("words.txt")); // FILE NOT FOUND 
+    }
+
+
+
+    // Array1 Test1: Tests to see if the output removed the two 10s
+    @Test
+    public void withoutTenTest1() { 
+        int[] numsInput = {1, 10, 10, 2};
+        int[] numsExpected = {1, 2, 0, 0};
+        assertEquals(numsExpected, Utility.withoutTen(numsInput));
+    }
+
+    // Array1 Test2: Tests for removing 10s in the first int
+    @Test
+    public void withoutTenTest2() { 
+        int[] numsInput = {10, 2, 10};
+        int[] numsExpected = {2, 0, 0};
+        assertEquals(numsExpected, Utility.withoutTen(numsInput));
+    }
+
+    // Array1 Test3: Tests for replacing 10 with 0
+    @Test
+    public void withoutTenTest3() { 
+        int[] numsInput = {1, 99, 10};
+        int[] numsExpected = {1, 99, 0};
+        assertEquals(numsExpected, Utility.withoutTen(numsInput));
+    }
+
+    // Array1 Test4: Tests for something that doesn't need to be changed
+    @Test
+    public void withoutTenTest4() { 
+        int[] numsInput = {1, 2, 3};
+        int[] numsExpected = {1, 2, 3};
+        assertEquals(numsExpected, Utility.withoutTen(numsInput));
+    }
+
+    // Array1 Test5: Tests for large jump
+    @Test
+    public void withoutTenTest5() { 
+        int[] numsInput = {0, 0, 0, 0, 0, 10};
+        int[] numsExpected = {10, 0, 0, 0, 0, 0};
+        assertEquals(numsExpected, Utility.withoutTen(numsInput));
+    }
+
+
+
     //FileO2 Test1: Testing words.txt
     @Test
     public void alphaWordTest1() throws IOException {
         assertEquals("amet", Utility.alphaWord("words.txt")); // CANT FIND FILE?
     }
+
+
 
     // Array2 Test1: Testing simple array, alone value in centre
     @Test
@@ -117,7 +178,8 @@ public class UtilityTest{
 
         assertTrue(Arrays.equals(Utility.notAlone(inArray, 2), outArray));
     }
-
+    
+    
 
     // Array5 Test1: Testing for a simple balanced array
     @Test
@@ -158,6 +220,48 @@ public class UtilityTest{
 
         assertEquals(Utility.canBalance(nums), false);
     }
+
+
+
+    // Array6 Test1: Tests README Example 1
+    @Test
+    public void seriesUpTest1() {
+        int[] seriesUpExpected = {1, 1, 2, 1, 2, 3};
+        assertArrayEquals(seriesUpExpected, Utility.seriesUp(3));
+    }
+
+    // Array6 Test2: Tests README Example 2
+    @Test
+    public void seriesUpTest2() {
+        int[] seriesUpExpected = {1, 1, 2, 1, 2, 3, 1, 2, 3, 4};
+        assertArrayEquals(seriesUpExpected, Utility.seriesUp(4));
+    }
+
+    // Array6 Test3: Tests README Example 3
+    @Test
+    public void seriesUpTest3() {
+        int[] seriesUpExpected = {1, 1, 2};
+        assertArrayEquals(seriesUpExpected, Utility.seriesUp(2));
+    }
+
+
+
+    // Array7 Test1: Tests README Example
+    @Test
+    public void reverseTest1() {
+        int[][] reverseInput = new int[][]{{1,2,3}, {4,5,6}, {7,8,9}};
+        int[][] reverseExpected = new int[][]{{9,8,7}, {6,5,4}, {3,2,1}};
+        assertEquals(reverseExpected, Utility.reverse(reverseInput));
+    }
+
+    // Array7 Test2: Checks for a larger 2D array, special palindrome number case
+    @Test
+    public void reverseTest2() {
+        int[][] reverseInput = new int[][]{{9, 8, 7}, {6, 5 ,4}, {3, 2, 1}, {1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[][] reverseExpected = new int[][]{{9, 8, 7}, {6, 5 ,4}, {3, 2, 1}, {1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        assertTrue(Arrays.deepEquals(reverseExpected, Utility.reverse(reverseInput)));
+    }
+
 
 
     // Array9 Test1: Tests README Example (had to alter it to return strings due to it referencing arrays but not the values)
