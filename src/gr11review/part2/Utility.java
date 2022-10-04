@@ -12,7 +12,7 @@ public class Utility {
      * Methods1: This method returns true if the given string is xy-balanced. 
      * @param str String that is tested for xy-balance. 
      * @return returns true if the given string is xy-balanced, returns false if not. 
-     * @author Lydia He
+     * @author L. He
      */
     public static boolean xyBalance(String str) {
         // Variables
@@ -45,7 +45,7 @@ public class Utility {
      * Sums the integers in the string
      * @param str user-inputted string
      * @return strSum (the sum of the integers in the string)
-     * @author Kevin Huang
+     * @author K. Huang
      */ 
     public static int sumNumbers(String str) {
         int strSum = 0;
@@ -72,7 +72,7 @@ public class Utility {
      * given the name of a file filenametxt that contains a single word on each line.
      * @param filenametxt a file that contains a single word on each line.
      * @return returns the longest word in the file.
-     * @author Lydia He
+     * @author L. He
      */
     public static String longestWord(String filenametxt) throws IOException {
 		BufferedReader thefile = new BufferedReader(new FileReader("src/gr11review/part2/" + filenametxt));
@@ -99,7 +99,7 @@ public class Utility {
      * Array1: This method returns the version of the given array where all the 10's have been removed. 
      * @param nums array values. 
      * @return returns the array without tens 
-     * @author Lydia He
+     * @author L. He
      */
     public static int[] withoutTen(int[] nums) {
         // Variables
@@ -128,7 +128,7 @@ public class Utility {
      * @param nums the array of integers
      * @param value the "alone-value" that is to be altered within the array
      * @return numsReturn (the updated int array)
-     * @author Kevin Huang
+     * @author K. Huang
      */
     public static int[] notAlone(int[] nums, int value) {
         if (nums.length >= 1) { // In case the array size is 0
@@ -163,6 +163,7 @@ public class Utility {
      * The length of the array will be 1 + 2 + 3 ... + n, which is known to sum to exactly n*(n + 1)/2.
      * @param n The end value in the array
      * @return The resulting array following the pattern {1, 1, 2, 1, 2, 3, ... 1, 2, 3 .. n} 
+     * @author L. He
      */
     public static int[] seriesUp(int n) {
         // Variable
@@ -180,5 +181,30 @@ public class Utility {
         return finalArray;
     }
 
+    /**
+     * Array9: This method inverts a 2D array, meaning each row of the 2D array is now a column, and each column is now a row
+     * @param arr Array input that gets inverted
+     * @return Returns the outputted inverted 2D array
+     * @author L. He
+     */
+    public static int[][] invert(int[][] arr) {
+        // New 2D elements
+        int m = 0;
+        int n = 0;
 
+        // Resulting Array
+        int[][] finalArray = new int[arr.length][arr[arr.length - 1].length];
+        
+        // Calculation
+        for (int i = arr.length - 1; i >= 0; i--){
+            for (int x = arr[arr.length - 1].length - 1; x >= 0; x--){
+                finalArray[m][n] = arr[i][x];
+                    n++;
+                }
+            m++;
+            n = 0;
+        }
+
+        return finalArray;
+    }
 }
