@@ -7,15 +7,9 @@ import java.io.*;
 import java.util.Arrays;
 
 public class Utility {
-    // Delete this after
-    public static void main(String[] args) throws IOException{
-        // TRYING TO FIX FILEIO1
-        System.out.println(longestWord("words.txt"));
-
-    }
 
     /**
-     * This method returns true if the given string is xy-balanced. 
+     * Methods1: This method returns true if the given string is xy-balanced. 
      * @param str String that is tested for xy-balance. 
      * @return returns true if the given string is xy-balanced, returns false if not. 
      * @author Lydia He
@@ -74,7 +68,7 @@ public class Utility {
     }
 
     /**
-     * This method returns the longest word in the file,
+     * FileIO1: This method returns the longest word in the file,
      * given the name of a file filenametxt that contains a single word on each line.
      * @param filenametxt a file that contains a single word on each line.
      * @return returns the longest word in the file.
@@ -102,7 +96,7 @@ public class Utility {
     }
 
     /**
-     * This method returns the version of the given array where all the 10's have been removed. 
+     * Array1: This method returns the version of the given array where all the 10's have been removed. 
      * @param nums array values. 
      * @return returns the array without tens 
      * @author Lydia He
