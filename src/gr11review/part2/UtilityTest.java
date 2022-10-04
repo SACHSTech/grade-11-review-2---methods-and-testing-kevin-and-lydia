@@ -73,8 +73,18 @@ public class UtilityTest{
     // FileIO1 Test
     @Test
     public void fileIO1Test1() throws IOException {
-        //assertEquals("consectetur", Utility.longestWord("words.txt"));
+        //assertEquals("consectetur", Utility.longestWord("words.txt")); // THIS DOESNT WORK 
     }
+
+    // Array1 Test
+    @Test
+    public void withoutTenTest1() { 
+        int[] numsInput = {1, 10, 10, 2};
+        int[] numsExpected = {1, 2, 0, 0};
+
+        assertEquals(numsExpected, Utility.withoutTen(numsInput));
+    }
+
 
     // Array2 Test
     @Test

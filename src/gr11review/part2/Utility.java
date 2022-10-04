@@ -7,9 +7,11 @@ import java.io.*;
 import java.util.Arrays;
 
 public class Utility {
+    // Delete this after
     public static void main(String[] args) throws IOException{
         // TRYING TO FIX FILEIO1
         System.out.println(longestWord("words.txt"));
+
     }
 
     /**
@@ -102,11 +104,27 @@ public class Utility {
      * @return 
      */
     public static int[] withoutTen(int[] nums) {
+        // Variables
+        int intCount = 0;
 
-        return nums;
+        // Resulting Array
+        int[] finalArray = new int[nums.length];
+
+        // Calculation
+        for(int i = 0; i < nums.length; i++) {
+            if(nums[i] == 10) {
+            } else {
+                finalArray[intCount] = nums[i];
+                intCount++;
+            }
+        }
+
+        for(int i = intCount; i < nums.length; i++) {
+            finalArray[i] = 0;
+        }
+        return finalArray;
     }
-
-
+        
     /**
      * Takes an array and return an altered array with the value altered to the greatest one beside it
      * @param nums the array of integers
