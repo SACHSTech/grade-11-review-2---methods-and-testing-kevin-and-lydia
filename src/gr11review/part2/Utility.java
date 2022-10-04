@@ -18,6 +18,7 @@ public class Utility {
      * This method returns true if the given string is xy-balanced. 
      * @param str String that is tested for xy-balance. 
      * @return returns true if the given string is xy-balanced, returns false if not. 
+     * @author Lydia He
      */
     public static boolean xyBalance(String str) {
         // Variables
@@ -50,6 +51,7 @@ public class Utility {
      * Sums the integers in the string
      * @param str user-inputted string
      * @return strSum (the sum of the integers in the string)
+     * @author Kevin Huang
      */ 
     public static int sumNumbers(String str) {
         int strSum = 0;
@@ -76,6 +78,7 @@ public class Utility {
      * given the name of a file filenametxt that contains a single word on each line.
      * @param filenametxt a file that contains a single word on each line.
      * @return returns the longest word in the file.
+     * @author Lydia He
      */
     public static String longestWord(String filenametxt) throws IOException {
 		BufferedReader thefile = new BufferedReader(new FileReader("src/gr11review/part2/" + filenametxt));
@@ -101,7 +104,8 @@ public class Utility {
     /**
      * This method returns the version of the given array where all the 10's have been removed. 
      * @param nums array values. 
-     * @return 
+     * @return returns the array without tens 
+     * @author Lydia He
      */
     public static int[] withoutTen(int[] nums) {
         // Variables
@@ -130,6 +134,7 @@ public class Utility {
      * @param nums the array of integers
      * @param value the "alone-value" that is to be altered within the array
      * @return numsReturn (the updated int array)
+     * @author Kevin Huang
      */
     public static int[] notAlone(int[] nums, int value) {
         if (nums.length >= 1) { // In case the array size is 0
