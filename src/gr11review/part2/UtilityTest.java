@@ -177,4 +177,22 @@ public class UtilityTest{
         int[] seriesUpExpected = {1, 1, 2};
         assertArrayEquals(seriesUpExpected, Utility.seriesUp(2));
     }
+
+    // Array7 Test1: Tests README Example
+    @Test
+    public void reverseTest1() {
+        int[][] reverseInput = new int[][]{{1,2,3}, {4,5,6}, {7,8,9}};
+        int[][] reverseExpected = new int[][]{{9,8,7}, {6,5,4}, {3,2,1}};
+        assertEquals(reverseExpected, Utility.reverse(reverseInput));
+    }
+
+    // Array7 Test2: Checks for a larger 2D array, special palindrome number case
+    @Test
+    public void reverseTest2() {
+        int[][] reverseInput = new int[][]{{9, 8, 7}, {6, 5 ,4}, {3, 2, 1}, {1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[][] reverseExpected = new int[][]{{9, 8, 7}, {6, 5 ,4}, {3, 2, 1}, {1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        assertTrue(Arrays.deepEquals(reverseExpected, Utility.reverse(reverseInput)));
+    }
+
+    
 }

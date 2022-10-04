@@ -182,27 +182,21 @@ public class Utility {
     }
 
     /**
-     * Array9: This method inverts a 2D array, meaning each row of the 2D array is now a column, and each column is now a row
-     * @param arr Array input that gets inverted
-     * @return Returns the outputted inverted 2D array
+     * Array9: This method takes a 2D array and reverses all of the content in the 2D array
+     * @param arr Array input that gets reversed
+     * @return Returns the outputted reversed 2D array
      * @author L. He
      */
-    public static int[][] invert(int[][] arr) {
-        // New 2D elements
-        int m = 0;
-        int n = 0;
-
+    public static int[][] reverse(int[][] arr) {
         // Resulting Array
-        int[][] finalArray = new int[arr.length][arr[arr.length - 1].length];
+        int[][] finalArray = new int[arr.length][arr[0].length];
         
         // Calculation
-        for (int i = arr.length - 1; i >= 0; i--){
-            for (int x = arr[arr.length - 1].length - 1; x >= 0; x--){
-                finalArray[m][n] = arr[i][x];
-                    n++;
-                }
-            m++;
-            n = 0;
+        for (int i = 0; i < arr.length; i++){
+            for(int j = 0; j < arr[0].length; j++) {
+                // Final array is the reverse of int[][] arr
+                finalArray[arr.length - i - 1][arr[0].length - j - 1] = arr[i][j];
+            }
         }
 
         return finalArray;
