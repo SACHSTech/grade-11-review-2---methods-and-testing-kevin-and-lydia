@@ -157,4 +157,28 @@ public class Utility {
             return nums;
         }
     }
+
+    /**
+     * Array6: This program creates an array, given n>=0, with the pattern {1, 1, 2, 1, 2, 3, ... 1, 2, 3 .. n} 
+     * The length of the array will be 1 + 2 + 3 ... + n, which is known to sum to exactly n*(n + 1)/2.
+     * @param n The end value in the array
+     * @return The resulting array following the pattern {1, 1, 2, 1, 2, 3, ... 1, 2, 3 .. n} 
+     */
+    public static int[] seriesUp(int n) {
+        // Variable
+        int intCount = 0;
+
+        // Resulting Array
+        int[] finalArray = new int[n * (n + 1) / 2];
+
+        // Two loops
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                finalArray[intCount] = j;
+            }
+        }
+        return finalArray;
+    }
+
+
 }
