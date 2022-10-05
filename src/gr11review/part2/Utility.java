@@ -284,14 +284,7 @@ public class Utility {
                 invert[i][j] = arr[j][i]; // changes row index to col index and vice versa
             }
         }
-        
-<<<<<<< HEAD
+
         return invert;
     }
-
-     
-=======
-        return Arrays.deepToString(invert); // Had to change the signature in order to stop aliasing the array objects
-    } 
->>>>>>> 11be11fed1584994c2d9a778d6beeecc127fbffd
 }
