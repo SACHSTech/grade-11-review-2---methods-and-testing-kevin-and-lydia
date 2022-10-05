@@ -70,7 +70,7 @@ public class UtilityTest{
     //FileO2 Test1: Testing words.txt
     @Test
     public void alphaWordTest1() throws IOException {
-        assertEquals("amet", Utility.alphaWord("words.txt")); // CANT FIND FILE?
+        assertEquals("amet", Utility.alphaWord("C:\\Users\\kevin\\ICS4U\\grade-11-review-2---methods-and-testing-kevin-and-lydia/src/gr11review/part2/words.txt")); // CANT FIND FILE?
     }
 
     // Array2 Test1: Testing simple array, alone value in centre
@@ -164,18 +164,18 @@ public class UtilityTest{
     @Test
     public void invertTest1() {
         int[][] invertTest = new int[][]{{1, 1, 1}, {2, 2, 2}, {3, 3, 3}};
-        String invertAnswer = "[[1, 2, 3], [1, 2, 3], [1, 2, 3]]";
+        int[][] invertAnswer = new int[][]{{1, 2, 3}, {1, 2, 3}, {1, 2, 3}};
 
-        assertEquals(invertAnswer, Utility.invert(invertTest));
+        assertArrayEquals(invertAnswer, Utility.invert(invertTest));
     }
 
     // Array9 Test2: Tests a empty 2D array
     @Test
     public void invertTest2() {
         int[][] invertTest = new int[][]{{0}};
-        String invertAnswer = "[[0]]";
+        int[][] invertAnswer = new int[][]{{0}};
 
-        assertEquals(invertAnswer, Utility.invert(invertTest));
+        assertArrayEquals(invertAnswer, Utility.invert(invertTest));
     }
 
 }

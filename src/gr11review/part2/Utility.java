@@ -171,7 +171,7 @@ public class Utility {
      * @return the inverted array.
      * @author K. Huang
      */
-    public static String invert(int[][] arr) {
+    public static int[][] invert(int[][] arr) {
         int[][] invert = new int[arr.length][arr.length];
 
         // inverts the 2D array
@@ -182,7 +182,7 @@ public class Utility {
             }
         }
         
-        return Arrays.deepToString(invert); // Had to change the signature in order to stop aliasing the array objects
+        return invert;
     }
 
      
